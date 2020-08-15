@@ -31,12 +31,12 @@ namespace AdvanceCSharpFinalTestEvents
     //3)    Declare the code for the event
     public class EventHandleClass
     {
-        public event MyEventHandeler MyEvent;
+        public event MyEventHandlerDelegate MyEvent;
 
         public void EventHandlerMethod()
         {
-            
-            MyEventHandeler myHandler = MyEvent;
+
+            MyEventHandlerDelegate myHandler = MyEvent;
             if (myHandler != null)
             {
                 myHandler(this, new MyEventArgs("My Event Handler"));
@@ -46,7 +46,7 @@ namespace AdvanceCSharpFinalTestEvents
     }
 
     //2)    Set up the delegate for the event
-    public delegate void MyEventHandeler(object source, MyEventArgs e);
+    public delegate void MyEventHandlerDelegate(object source, MyEventArgs e);
 
     //1)    Create a class to pass as an argument for the event handlers
     public class MyEventArgs : EventArgs
